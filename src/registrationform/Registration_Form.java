@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package registrationform;
-import java.util.regex.*;
 
+import java.util.regex.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,55 +29,87 @@ public class Registration_Form extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Main_layout = new javax.swing.JPanel();
+        Title = new javax.swing.JLabel();
+        Fname = new javax.swing.JLabel();
+        Lname = new javax.swing.JLabel();
+        Aage = new javax.swing.JLabel();
+        Eemail = new javax.swing.JLabel();
+        Mmessage = new javax.swing.JLabel();
         First_Name = new javax.swing.JTextField();
         Age = new javax.swing.JTextField();
         Last_Name = new javax.swing.JTextField();
         Email = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Message = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        Exit = new javax.swing.JButton();
-        Cancel = new javax.swing.JButton();
         Submit = new javax.swing.JButton();
+        Cancel = new javax.swing.JButton();
+        lastnameerror = new javax.swing.JLabel();
+        firstnameerrorlabel = new javax.swing.JLabel();
+        ageerror = new javax.swing.JLabel();
+        emailerror = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 153, 255));
 
-        First_Name.setText("Name");
+        Main_layout.setBackground(new java.awt.Color(102, 51, 255));
+        Main_layout.setMaximumSize(new java.awt.Dimension(700, 500));
+
+        Title.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Title.setForeground(new java.awt.Color(255, 255, 255));
+        Title.setText("Customer Registration Form");
+
+        Fname.setForeground(new java.awt.Color(255, 255, 255));
+        Fname.setText("First Name:");
+
+        Lname.setForeground(new java.awt.Color(255, 255, 255));
+        Lname.setText("Last Name:");
+
+        Aage.setForeground(new java.awt.Color(255, 255, 255));
+        Aage.setText("Age:");
+
+        Eemail.setBackground(new java.awt.Color(255, 255, 255));
+        Eemail.setForeground(new java.awt.Color(255, 255, 255));
+        Eemail.setText("Email :");
+
+        Mmessage.setForeground(new java.awt.Color(255, 255, 255));
+        Mmessage.setText("Message:");
+
         First_Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 First_NameActionPerformed(evt);
             }
         });
         First_Name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                First_NameKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 First_NameKeyReleased(evt);
             }
-        });
-
-        Age.setText("Age");
-        Age.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgeActionPerformed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                First_NameKeyTyped(evt);
             }
         });
 
-        Last_Name.setText("Last Name");
+        Age.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                AgeKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                AgeKeyReleased(evt);
+            }
+        });
+
         Last_Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Last_NameActionPerformed(evt);
             }
         });
 
-        Email.setText("Email");
-        Email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailActionPerformed(evt);
+        Email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EmailKeyReleased(evt);
             }
         });
 
@@ -84,38 +117,6 @@ public class Registration_Form extends javax.swing.JFrame {
         Message.setRows(5);
         jScrollPane1.setViewportView(Message);
 
-        jLabel1.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Registration Form");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setText("Age");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setText("First Name");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setText("Message");
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setText("Email");
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setText("Last Name");
-
-        Exit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Exit.setText("Exit");
-
-        Cancel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Cancel.setText("Cancel");
-        Cancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelActionPerformed(evt);
-            }
-        });
-
-        Submit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Submit.setText("Submit");
         Submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,72 +124,120 @@ public class Registration_Form extends javax.swing.JFrame {
             }
         });
 
+        Cancel.setText("Cancel");
+
+        lastnameerror.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        lastnameerror.setForeground(java.awt.Color.red);
+        lastnameerror.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                lastnameerrorKeyReleased(evt);
+            }
+        });
+
+        firstnameerrorlabel.setBackground(new java.awt.Color(0, 0, 0));
+        firstnameerrorlabel.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        firstnameerrorlabel.setForeground(java.awt.Color.red);
+
+        ageerror.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        ageerror.setForeground(java.awt.Color.red);
+
+        emailerror.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        emailerror.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout Main_layoutLayout = new javax.swing.GroupLayout(Main_layout);
+        Main_layout.setLayout(Main_layoutLayout);
+        Main_layoutLayout.setHorizontalGroup(
+            Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Main_layoutLayout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Aage, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(Eemail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Mmessage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Fname, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                    .addComponent(Lname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Main_layoutLayout.createSequentialGroup()
+                        .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(Age, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(First_Name, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Last_Name, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lastnameerror, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(Main_layoutLayout.createSequentialGroup()
+                                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ageerror, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(firstnameerrorlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap())))
+                    .addGroup(Main_layoutLayout.createSequentialGroup()
+                        .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Main_layoutLayout.createSequentialGroup()
+                                .addComponent(Title)
+                                .addGap(0, 199, Short.MAX_VALUE))
+                            .addGroup(Main_layoutLayout.createSequentialGroup()
+                                .addGap(145, 145, 145)
+                                .addComponent(Submit)
+                                .addGap(18, 18, 18)
+                                .addComponent(Cancel))
+                            .addGroup(Main_layoutLayout.createSequentialGroup()
+                                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(Email)
+                                    .addComponent(jScrollPane1))
+                                .addGap(18, 18, 18)
+                                .addComponent(emailerror, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())))
+        );
+        Main_layoutLayout.setVerticalGroup(
+            Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Main_layoutLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Fname)
+                        .addComponent(First_Name))
+                    .addComponent(firstnameerrorlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lname)
+                    .addComponent(Last_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lastnameerror, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Aage)
+                    .addComponent(Age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ageerror, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Eemail)
+                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailerror, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Mmessage)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(Main_layoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Submit)
+                    .addComponent(Cancel))
+                .addContainerGap(200, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(First_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Last_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Age, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 124, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Submit)
-                .addGap(18, 18, 18)
-                .addComponent(Cancel)
-                .addGap(18, 18, 18)
-                .addComponent(Exit)
-                .addGap(96, 96, 96))
+            .addComponent(Main_layout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(First_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Last_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Age, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Exit)
-                    .addComponent(Cancel)
-                    .addComponent(Submit))
-                .addContainerGap())
+                .addComponent(Main_layout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,46 +247,101 @@ public class Registration_Form extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_First_NameActionPerformed
 
-    private void AgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AgeActionPerformed
 
-    private void Last_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Last_NameActionPerformed
+    private void First_NameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_First_NameKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Last_NameActionPerformed
-
-    private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EmailActionPerformed
-
-    private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CancelActionPerformed
+    }//GEN-LAST:event_First_NameKeyPressed
 
     private void First_NameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_First_NameKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_First_NameKeyReleased
 
+    private void lastnameerrorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lastnameerrorKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastnameerrorKeyReleased
+
+    private void Last_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Last_NameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Last_NameActionPerformed
+
+    private void AgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AgeKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgeKeyReleased
+
+    private void EmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EmailKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailKeyReleased
+
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
-        
-        String firstname = First_Name.getText();
-        String lastname = Last_Name.getText();
-        String age = Age.getText();
-        String email = Email.getText();
-        
-        
-        String PATTERN = "^[a-zA-Z0-9]{5,30}$";
-        Pattern patt=Pattern.compile(PATTERN);
-        Matcher match=patt.matcher(First_Name.getText());
-        if(!match.matches()){
-//        JOptionpane
+        if (!First_Name.getText().isEmpty()) {
+            String firstname_PATTERN = "^[a-zA-Z]{1,30}$";
+            Pattern patt = Pattern.compile(firstname_PATTERN);
+            Matcher match = patt.matcher(First_Name.getText());
+
+            if (!match.matches()) {
+                JOptionPane.showMessageDialog(null, "Naming in first name is incorrect, kindly use alphabets!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+            //lastname
+            if (!Last_Name.getText().isEmpty()) {
+                String lastname_PATTERN = "^[a-zA-Z]{1,30}$";
+                Pattern patt2 = Pattern.compile(lastname_PATTERN);
+                Matcher match2 = patt2.matcher(Last_Name.getText());
+                if (!match2.matches()) {
+                    JOptionPane.showMessageDialog(null, "Naming in last name is incorrect, kindly use alphabets!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+
+                //age
+                if (Age.getText().isEmpty()) {
+                    String age_PATTERN = "\\b([1-9][0-9]?|100)\\b";
+                    Pattern patt3 = Pattern.compile(age_PATTERN);
+                    Matcher match3 = patt3.matcher(Age.getText());
+                    if (!match3.matches()) {
+                        JOptionPane.showMessageDialog(null, "You entered wrong age number, kindly age is between 1 to 100 !", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+//email
+                    if (!Email.getText().isEmpty()) {
+                        String email_PATTERN = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b";
+                        Pattern patt4 = Pattern.compile(email_PATTERN);
+                        Matcher match4 = patt4.matcher(Email.getText());
+                        if (!match4.matches()) {
+                            JOptionPane.showMessageDialog(null, "Enter correct email id!", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Please enter your email.", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    
+//email ends                    
+                } else {
+                    JOptionPane.showMessageDialog(null, "Please enter your age in text field.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                //age end        
+            } else {
+                JOptionPane.showMessageDialog(null, "Please enter your lastname.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            //lastname end
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter your firstname.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        
-        
-        
+        // firstname end
+
+        JOptionPane.showMessageDialog(null, "Successful");
     }//GEN-LAST:event_SubmitActionPerformed
+
+    private void First_NameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_First_NameKeyTyped
+        // TODO add your handling code here:       
+    }//GEN-LAST:event_First_NameKeyTyped
+
+    private void AgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AgeKeyPressed
+        // TODO add your handling code here:
+        String PATTERN = "\\b([1-9][0-9]?|100)\\b";
+        Pattern patt = Pattern.compile(PATTERN);
+        Matcher match = patt.matcher(Age.getText());
+        if (!match.matches()) {
+            JOptionPane.showMessageDialog(null, "Age Should be between 1 to 100");
+        }
+    }//GEN-LAST:event_AgeKeyPressed
 
     /**
      * @param args the command line arguments
@@ -275,20 +379,24 @@ public class Registration_Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Aage;
     private javax.swing.JTextField Age;
     private javax.swing.JButton Cancel;
+    private javax.swing.JLabel Eemail;
     private javax.swing.JTextField Email;
-    private javax.swing.JButton Exit;
     private javax.swing.JTextField First_Name;
+    private javax.swing.JLabel Fname;
     private javax.swing.JTextField Last_Name;
+    private javax.swing.JLabel Lname;
+    private javax.swing.JPanel Main_layout;
     private javax.swing.JTextArea Message;
+    private javax.swing.JLabel Mmessage;
     private javax.swing.JButton Submit;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel Title;
+    private javax.swing.JLabel ageerror;
+    private javax.swing.JLabel emailerror;
+    private javax.swing.JLabel firstnameerrorlabel;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lastnameerror;
     // End of variables declaration//GEN-END:variables
 }
